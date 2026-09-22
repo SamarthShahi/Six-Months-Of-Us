@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Six Months of Us ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:#f7eef0; background:#090709;
+  font-family:Inter,system-ui,sans-serif; overflow-x:hidden;
+}
+body:before{
+  content:""; position:fixed; inset:0; pointer-events:none; opacity:.16;
+  background-image:radial-gradient(#fff 0.7px,transparent .7px);
+  background-size:34px 34px; z-index:0;
+}
+section{position:relative; z-index:1}
+.hero{
+  min-height:100svh; display:flex; align-items:center; justify-content:center;
+  text-align:center; padding:40px 22px;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(255,155,180,.15),transparent 28%),
+    radial-gradient(circle at 20% 80%,rgba(117,157,255,.10),transparent 28%),
+    #090709;
+}
+.moon{
+  width:115px;height:115px;border-radius:50%;margin:0 auto 28px;
+  background:radial-gradient(circle at 35% 32%,#fff,#ffe9ef 52%,#d8c5ca);
+  box-shadow:0 0 35px rgba(255,230,238,.35),0 0 110px rgba(255,180,205,.12);
+}
+.kicker{letter-spacing:.32em;text-transform:uppercase;font-size:11px;opacity:.7}
+h1,h2,.script{font-family:"Cormorant Garamond",serif}
+h1{font-size:clamp(52px,13vw,110px);line-height:.85;margin:18px 0}
+.hero p{max-width:560px;margin:18px auto;color:#d8cdd0;line-height:1.7}
+.date{font-family:"Cormorant Garamond",serif;font-size:22px}
+.btn{
+  display:inline-block;margin-top:24px;padding:13px 22px;border:1px solid rgba(255,255,255,.25);
+  border-radius:999px;color:#fff;text-decoration:none;background:rgba(255,255,255,.05);
+  transition:.25s
+}
+.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.10)}
+.wrap{width:min(1080px,92%);margin:auto}
+.story{padding:110px 0}
+.center{text-align:center}
+h2{font-size:clamp(42px,8vw,72px);font-weight:500;margin:8px 0 22px}
+.lead{max-width:700px;margin:auto;line-height:1.9;color:#d8cdd0}
+.timeline{margin-top:55px;display:grid;gap:18px}
+.card{
+  padding:26px;border:1px solid rgba(255,255,255,.10);border-radius:24px;
+  background:rgba(255,255,255,.035);backdrop-filter:blur(10px)
+}
+.card .num{font-size:11px;letter-spacing:.2em;opacity:.5}
+.card h3{font-family:"Cormorant Garamond",serif;font-size:30px;margin:8px 0}
+.gallery{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:55px
+}
+.polaroid{
+  background:#f8f4ef;color:#171315;padding:11px 11px 38px;
+  box-shadow:0 18px 45px rgba(0,0,0,.35);transform:rotate(var(--r));
+  transition:transform .3s,box-shadow .3s;cursor:pointer
+}
+.polaroid:hover{transform:rotate(0) translateY(-8px);box-shadow:0 25px 60px rgba(0,0,0,.5)}
+.polaroid img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.polaroid p{font-family:"Cormorant Garamond",serif;font-size:22px;margin:10px 4px 0}
+.letter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:45px}
+.envelope{
+  min-height:150px;border:1px solid rgba(255,255,255,.12);border-radius:22px;
+  background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  color:#fff;cursor:pointer;padding:25px;text-align:left
+}
+.envelope span{font-size:30px}
+.envelope strong{display:block;font-family:"Cormorant Garamond",serif;font-size:27px;font-weight:500;margin-top:15px}
+.final{
+  min-height:90svh;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:radial-gradient(circle at 50% 45%,rgba(255,90,130,.12),transparent 35%),#090709
+}
+.final h2{font-size:clamp(55px,11vw,105px);line-height:.88}
+.small{font-size:12px;letter-spacing:.15em;text-transform:uppercase;opacity:.55}
+footer{padding:30px;text-align:center;color:#8f8589;font-size:12px}
+.modal{
+  position:fixed;inset:0;background:rgba(0,0,0,.86);display:none;align-items:center;justify-content:center;
+  padding:22px;z-index:20
+}
+.modal.open{display:flex}
+.modalbox{width:min(650px,100%);padding:34px;border:1px solid rgba(255,255,255,.16);border-radius:25px;background:#121012}
+.close{float:right;border:0;background:none;color:#fff;font-size:26px;cursor:pointer}
+#letterTitle{font-family:"Cormorant Garamond",serif;font-size:42px;margin:15px 0}
+#letterText{line-height:1.9;color:#d9ced1;white-space:pre-line}
+@media(max-width:760px){
+  .gallery,.letter-grid{grid-template-columns:1fr 1fr}
+  .gallery .polaroid:nth-child(3n){grid-column:auto}
+}
+@media(max-width:520px){
+  .gallery,.letter-grid{grid-template-columns:1fr}
+  .polaroid{max-width:360px;margin:auto}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div>
+    <div class="moon"></div>
+    <div class="kicker">22.03.2026 — 22.09.2026</div>
+    <h1>Six Months<br>of Us ♡</h1>
+    <p>For the girl who somehow became my favourite person, my safest place, and the reason ordinary days started feeling special.</p>
+    <div class="date">Nanuu × Shaanu</div><br>
+    <a class="btn" href="#story">Enter our little world ↓</a>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap center">
+    <div class="kicker">chapter one</div>
+    <h2>And then there was us.</h2>
+    <p class="lead">
+      We started as childhood acquaintances, became friends, became good friends...
+      and somewhere along the way, I fell for you. Then you fell for me even harder.
+      On 22 March 2026, we stopped being a “what if” and became <i>us</i>.
+    </p>
+    <div class="timeline">
+      <div class="card"><div class="num">14 · 02 · 2026</div><h3>Our first Valentine night ♡</h3><p>A memory that quietly became part of our story.</p></div>
+      <div class="card"><div class="num">28 · 02 · 2026</div><h3>The first “I love you.”</h3><p>Three little words that changed everything.</p></div>
+      <div class="card"><div class="num">22 · 03 · 2026</div><h3>The day we became us.</h3><p>And six months later, here we are.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap center">
+    <div class="kicker">chapter two</div>
+    <h2>Little pieces of us.</h2>
+    <p class="lead">Some memories are loud. Some are tiny. I want to keep all of them.</p>
+    <div class="gallery">
+      <div class="polaroid" style="--r:-2deg"><img src="01-dressed-up.jpeg"><p>Looking at you like you're the only person in the room.</p></div>
+      <div class="polaroid" style="--r:2deg"><img src="02-purple-dress.jpeg"><p>One mirror. Two idiots. ♡</p></div>
+      <div class="polaroid" style="--r:-1deg"><img src="03-silly-mirror.jpeg"><p>Our kind of romance 😂</p></div>
+      <div class="polaroid" style="--r:3deg"><img src="04-kiss.jpeg"><p>A little bit of magic.</p></div>
+      <div class="polaroid" style="--r:-3deg"><img src="05-selfie.jpeg"><p>My favourite face beside mine.</p></div>
+      <div class="polaroid" style="--r:1deg"><img src="06-snow-hug.jpeg"><p>Cold hands, warm hearts.</p></div>
+      <div class="polaroid" style="--r:-2deg"><img src="07-snow-kiss.jpeg"><p>Somewhere above the clouds.</p></div>
+      <div class="polaroid" style="--r:2deg"><img src="08-mountain-view.jpeg"><p>I'd choose this view again — if you're in it.</p></div>
+      <div class="polaroid" style="--r:-1deg"><img src="09-snow-selfie.jpeg"><p>Us, against the whole sky.</p></div>
+      <div class="polaroid" style="--r:3deg"><img src="10-holi.jpeg"><p>Messy, colourful, ours.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="story song-section">
+  <div class="wrap center">
+    <div class="kicker">our song</div>
+    <h2>Can't Help Falling in Love ♡</h2>
+    <p class="lead">Because somehow, these words feel like they were written for us.</p>
+    <a class="btn" href="https://www.youtube.com/watch?v=vGJTaP6anOU" target="_blank" rel="noopener">▶ Play our song</a>
+    <p class="small" style="margin-top:18px">Elvis Presley · Official Audio</p>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap center">
+    <div class="kicker">chapter three</div>
+    <h2>Open when...</h2>
+    <p class="lead">A few tiny letters for the days when I can't be there to say it myself.</p>
+    <div class="letter-grid">
+      <button class="envelope" onclick="openLetter('miss')"><span>💌</span><strong>you miss me</strong></button>
+      <button class="envelope" onclick="openLetter('sad')"><span>🌷</span><strong>you're sad</strong></button>
+      <button class="envelope" onclick="openLetter('smile')"><span>✨</span><strong>you need to smile</strong></button>
+      <button class="envelope" onclick="openLetter('doubt')"><span>❤️</span><strong>you doubt my love</strong></button>
+      <button class="envelope" onclick="openLetter('hug')"><span>🫂</span><strong>you need a hug</strong></button>
+      <button class="envelope" onclick="openLetter('forever')"><span>🌙</span><strong>you think about us</strong></button>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="small">one last thing...</div>
+    <h2>6 months down.<br>So many more<br>to go. ♡</h2>
+    <p class="lead">I don't know what every next chapter will look like. I just know who I want beside me while we write it.</p>
+    <p class="script" style="font-size:36px;margin-top:35px">You. Always you.</p>
+    <p class="small">Happy 6 Months, Shaanu.<br>— Your Nanuu</p>
+  </div>
+</section>
+
+<footer>Made with too much love by Nanuu ♡</footer>
+
+<div class="modal" id="modal">
+  <div class="modalbox">
+    <button class="close" onclick="closeLetter()">×</button>
+    <div id="letterTitle"></div>
+    <div id="letterText"></div>
+  </div>
+</div>
+
+<script>
+const letters = {
+ miss: ["Open when you miss me", "Come here, silly. If I could, I'd be there in a second. Until then, look at one of our pictures and remember: somewhere in this huge world, there is one person who is missing you right back. ♡"],
+ sad: ["Open when you're sad", "You don't have to be okay every second. Let yourself feel it. Then remember that you don't have to carry everything alone. I'm your person, on the good days and the messy ones too. 🌷"],
+ smile: ["Open when you need to smile", "Remember how we can turn the most normal moment into something completely stupid and somehow perfect. Now smile. Yes, I know you're smiling. 😂❤️"],
+ doubt: ["Open when you doubt my love", "There is no perfect sentence big enough for what you mean to me. So I'll keep showing you — in the little things, the big things, and every ordinary day in between."],
+ hug: ["Open when you need a hug", "Imagine my arms around you. No talking. No fixing anything. Just a long, quiet hug until the world feels a little softer again. 🫂"],
+ forever: ["Open when you think about us", "Six months ago we were just beginning. Today we have memories, inside jokes, adventures, snow, kisses, chaos and a whole little world that belongs to us. I can't wait to see what we add next."]
+};
+function openLetter(k){
+  document.getElementById('letterTitle').textContent=letters[k][0];
+  document.getElementById('letterText').textContent=letters[k][1];
+  document.getElementById('modal').classList.add('open');
+}
+function closeLetter(){document.getElementById('modal').classList.remove('open')}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeLetter()});
+</script>
+</body>
+</html>
